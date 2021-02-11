@@ -1,0 +1,9 @@
+﻿@page
+@model CodingTest.Pages.SuccessModel
+@{
+}
+
+@if (Model.Message != null)
+{
+    <div class="alert alert-success">@Model.Message</div>
+}

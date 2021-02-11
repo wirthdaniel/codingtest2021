@@ -1,0 +1,28 @@
+﻿@page
+@model CodingTest.Pages.SignUpModel
+@{
+    ViewData["Title"] = "Sign up page";
+}
+
+<form method="post" novalidate>
+    <div class="form-group">
+        <label asp-for="Subscription.Email"></label>
+        <input asp-for="Subscription.Email" class="form-control" />
+        <span class="text-danger" asp-validation-for="Subscription.Email"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Subscription.SourceOfInformation"></label>
+        <select class="form-control" asp-for="Subscription.SourceOfInformation" asp-items="Model.Sources">
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="Subscription.SignupReason"></label>
+        <textarea asp-for="Subscription.SignupReason" class="form-control" style="resize:none" rows="3">
+        </textarea>
+        <span class="text-danger" asp-validation-for="Subscription.SignupReason"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+
+    <div class="alert text-danger">@Model.Message</div>
+</form>
